@@ -37,9 +37,14 @@ WHERE ("type" = 'component' AND "element" IN (
 	'com_ajax',
 	'com_postinstall',
 	'com_fields',
-	'com_associations'
+	'com_associations',
+	'com_privacy',
+	'com_actionlogs',
+	'com_workflow',
+	'com_csp',
+	'com_mails'
 ))
-OR ("type" = 'module' AND "element" IN (
+OR ("type" = 'module' AND "client_id" = 0 AND "element" IN (
 	'mod_articles_archive',
 	'mod_articles_latest',
 	'mod_articles_popular',
@@ -61,17 +66,22 @@ OR ("type" = 'module' AND "element" IN (
 	'mod_articles_category',
 	'mod_articles_categories',
 	'mod_languages',
-	'mod_finder',
+	'mod_finder'
+))
+OR ("type" = 'module' AND "client_id" = 1 AND "element" IN (
 	'mod_custom',
 	'mod_feed',
 	'mod_latest',
 	'mod_logged',
 	'mod_login',
+	'mod_loginsupport',
 	'mod_menu',
 	'mod_popular',
 	'mod_quickicon',
-	'mod_status',
-	'mod_submenu',
+	'mod_frontend',
+	'mod_messages',
+	'mod_post_installation_messages',
+	'mod_user',
 	'mod_title',
 	'mod_toolbar',
 	'mod_multilangstatus',
@@ -79,7 +89,11 @@ OR ("type" = 'module' AND "element" IN (
 	'mod_stats_admin',
 	'mod_tags_popular',
 	'mod_tags_similar',
-	'mod_sampledata'
+	'mod_sampledata',
+	'mod_latestactions',
+	'mod_privacy_dashboard',
+	'mod_submenu',
+	'mod_privacy_status'
 ))
 OR ("type" = 'plugin' AND
 	(
